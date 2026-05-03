@@ -273,3 +273,39 @@ body {
   margin-bottom: 2px;
   font-size: 14px;
 }
+
+@media (max-width: 768px) {
+  .bt-root {
+    overflow: visible;
+  }
+
+  .bt-nav {
+    padding: 16px 20px;
+  }
+
+  .bt-nav-links {
+    display: none;
+  }
+
+  .bt-hero {
+    grid-template-columns: 1fr;
+    padding: 36px 20px 32px;
+    gap: 24px;
+  }
+
+  .bt-hero-title {
+    font-size: 32px;
+  }
+
+  .bt-posts-section {
+    padding: 32px 20px;
+  }
+
+  .bt-posts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bt-about-strip {
+    margin: 0 20px 40px;
+  }
+}
