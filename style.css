@@ -258,6 +258,8 @@ body {
   font-size: 28px;
   color: #f13030;
   flex-shrink: 0;
+  letter-spacing: -1px;
+  padding-top: 2px;
 }
 
 .bt-about-text {
