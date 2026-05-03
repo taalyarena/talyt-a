@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ainda somos capazes de coisas épicas · talyt.a</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #22181c;
+      color: #f6e8ea;
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+    }
+
+    /* NAV */
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 32px;
+      border-bottom: 0.5px solid #f45b6930;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 22px;
+      color: #f6e8ea;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-logo span { color: #f45b69; }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #f6e8ea99;
+    }
+
+    .nav-links a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: #f45b69; }
+
+    /* HERO DO POST */
+    .post-hero {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 56px 32px 40px;
+      border-bottom: 0.5px solid #f45b6920;
+    }
+
+    .post-cat {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #f45b69;
+      margin-bottom: 16px;
+    }
+
+    .post-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.12;
+      color: #f6e8ea;
+      margin-bottom: 20px;
+    }
+
+    .post-meta {
+      font-size: 12px;
+      color: #f6e8ea44;
+      letter-spacing: 0.06em;
+    }
+
+    /* IMAGEM DE CAPA */
+    .post-cover {
+      max-width: 720px;
+      margin: 0 auto 0;
+      padding: 0 32px;
+    }
+
+    .post-cover-inner {
+      width: 100%;
+      aspect-ratio: 16 / 7;
+      background: #f45b69;
+      padding: 8px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 32px;
+    }
+
+    .post-cover-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 6px;
+      display: block;
+    }
+
+    /* CONTEÚDO */
+    .post-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 32px 80px;
+    }
+
+    .post-content p {
+      font-size: 17px;
+      line-height: 1.85;
+      color: #f6e8eacc;
+      margin-bottom: 24px;
+    }
+
+    .post-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #f6e8ea;
+      margin: 48px 0 16px;
+      line-height: 1.2;
+    }
+
+    .post-content h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #f45b69;
+      margin: 36px 0 12px;
+    }
+
+    .post-content em {
+      font-style: italic;
+      color: #f6e8ea;
+    }
+
+    .post-content strong {
+      font-weight: 500;
+      color: #f6e8ea;
+    }
+
+    /* DESTAQUE / QUOTE */
+    .post-quote {
+      border-left: 2px solid #f45b69;
+      padding: 4px 0 4px 20px;
+      margin: 32px 0;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 20px;
+      color: #f6e8eaaa;
+      line-height: 1.6;
+    }
+
+    /* PLACEHOLDER PARA IMAGEM NO MEIO DO TEXTO */
+    .post-img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #f45b69;
+      padding: 8px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 36px 0;
+    }
+
+    .post-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 6px;
+      display: block;
+    }
+
+    /* VEREDITO FINAL */
+    .post-verdict {
+      background: #2e1f24;
+      border: 0.5px solid #f45b6933;
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin: 48px 0;
+    }
+
+    .post-verdict-label {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #f45b69;
+      margin-bottom: 12px;
+    }
+
+    .post-verdict p {
+      font-size: 16px;
+      color: #f6e8eacc;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* PERGUNTA FINAL */
+    .post-question {
+      background: #f45b69;
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin-top: 48px;
+    }
+
+    .post-question p {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-style: italic;
+      color: #22181c;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    /* VOLTAR */
+    .post-back {
+      display: inline-block;
+      margin-top: 48px;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #f45b69;
+      text-decoration: none;
+      border-bottom: 0.5px solid #f45b6955;
+      padding-bottom: 2px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .post-hero { padding: 36px 20px 32px; }
+      .post-title { font-size: 28px; }
+      .post-cover { padding: 0 20px; }
+      .post-content { padding: 36px 20px 60px; }
+      .post-content p { font-size: 16px; }
+      .post-content h2 { font-size: 22px; }
+      .post-verdict { padding: 20px; }
+      .post-question { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="../index.html" class="nav-logo">talyt<span>.</span>a</a>
+    <div class="nav-links">
+      <a href="#">filmes</a>
+      <a href="#">livros</a>
+      <a href="#">pensamentos</a>
+      <a href="#">youtube</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="post-hero">
+    <div class="post-cat">cinema</div>
+    <h1 class="post-title">ainda somos capazes de coisas épicas</h1>
+    <div class="post-meta">3 mai 2026 · 7 min de leitura</div>
+  </div>
+
+  <!-- CAPA -->
+  <div class="post-cover">
+    <div class="post-cover-inner">
+      <img src="../imagens/devils_head.png" alt="O Diabo Veste Prada">
+    </div>
+  </div>
+
+  <!-- CONTEÚDO -->
+  <div class="post-content">
+
+    <h2>o Gap</h2>
+
+    <p>SIM, mesmo com roteiros que já foram encenados em milhares de cenários diferentes, ainda assim, é possível fazer algo... icônico.</p>
+    <p>E bom. E digno de ir ao cinema. (Hello, 2026!)</p>
+    <p>Por pelo menos 40 minutos, o filme gira em torno de como o mundo mudou, que hoje a revista é na tela, e você <em>scroll</em> pela revista, não folheia mais. E como até a RUNWAY não escapou disso. Pensei que o roteiro ia seguir nesse sentido de história, e talvez, oferecer uma solução criativa para esse 'problema', mas aparentemente o canal para acessar essa resposta ainda está livre!</p>
+    <p>Não achei ruim a ideia do roteiro, mas enganou na primeira hora de filme. Não imaginei que o roteiro ia tentar conservar o espírito da revista. E deixar no ar uma dúvida que ninguém até hoje sabe responder: como a velha guarda pode (porque ela <em>tem que</em>) se ajustar ao novo folhear: o <em>scroll</em>?</p>
+
+    <!-- ESPAÇO PARA IMAGEM -->
+    <!-- <div class="post-img"><img src="../imagens/nome-da-img.jpg" alt=""></div> -->
+
+    <h2>a cena mais linda do filme</h2>
+
+    <p>Uma geração <strong>inteira</strong> se curou quando o Nigel recebeu a coroa que ele sempre quis. Quando a Miranda entrega o discurso, que ele mesmo fez, para ele ter a <em>honra</em> de discursar! Foi lindo de ver o crescimento do personagem da Miranda, e a própria emoção dele. Foi como ver uma rainha passando o cajado para o próximo rei!</p>
+    <p>Acho que o filme pecou um pouco quando não fez disso algo grande, só porque naquele momento as duas <em>heroínas</em> estavam indo ao resgate do império. Podiam ter feito uma troca de figurino dele, e dado mais valor na edição. Pelo amor de Deus, ele fez um discurso logo depois do show da Lady Gaga! Ele merecia mais!</p>
+
+    <h2>sobre a Andy</h2>
+
+    <p>Depois de 20 anos… ela ainda tem o mesmo padrão de homem e relacionamentos! (ninguém tá aqui pra julgar). Mas o arco do relacionamento foi o mesmo que o do primeiro filme: eles ficam, e quando começa a ficar complicado o cara pula fora. Só pra reaparecer quando tudo já se resolveu!</p>
+
+    <div class="post-quote">
+      se Miranda fosse um homem, todos falariam de como ela é ótima.
+    </div>
+
+    <p>Se queriam colocar algo no roteiro para além do destino na Runway, podiam ter escolhido a questão da amizade entre Andy e Rachel! Porque quando perceberam essa lacuna, tentaram preencher com uma cena de redenção no final.</p>
+
+    <h2>visão de mundo profissional</h2>
+
+    <p>Em 2023 eu <em>aceitei</em> que pessoas que são mais <em>legais</em> no ambiente de trabalho vão muito mais longe que pessoas que <em>sabem o que estão fazendo.</em> Por isso todo mundo já viu uma vez na vida alguém sem qualificações sendo promovido, enquanto quem preenche as planilhas é só contratado.</p>
+    <p>E esse filme, em 2026, me deu uma visão de mundo dos negócios que se você não <em>vê</em> a lógica disso, você não vai <em>entender</em>: <strong>a importância do network.</strong></p>
+    <p>Daí a importância de conhecer gente, conversar com pessoas, se interessar pela vida delas. <em>O mundo gira com as conexões, pessoas e conversas!</em></p>
+    <p>A Andy só conseguiu a entrevista principal porque: 1. ela foi atrás de <em>pessoas</em>; e 2. ela <em>pediu</em> pela entrevista.</p>
+    <p>Algumas pessoas (<em>myself included</em>) sentem uma necessidade de <em>feedback</em> muito grande — não aquele que diz se você tá no caminho certo, mas aquele que valida suas ações como um <em>tap on the head.</em> Isso não é saudável em nenhum ponto da vida. Mas é assunto para outro post :)</p>
+
+    <h2>um asterisco</h2>
+
+    <p>Literalmente 20 minutos antes da sessão, do outro lado do cinema, minha mãe viu uma mulher que ela tinha conhecido num jantar de <em>networking.</em> E no dia do filme que me ensina o poder de um network, semanas antes da nossa mudança, eu vejo o que um bom <em>network</em> pode fazer por você. Achei significativo!</p>
+
+    <!-- VEREDITO -->
+    <div class="post-verdict">
+      <div class="post-verdict-label">veredito final</div>
+      <p>Em meio a ondas de IA, <em>short reels</em> e mentes não pensantes, ainda somos capazes de produzir e valorizar o épico! Esse filme curou minha <em>inner child</em> de algo que eu nem sabia que precisava de cura. Minha versão de 14 anos está com o coração quentinho.</p>
+    </div>
+
+    <!-- PERGUNTA FINAL -->
+    <div class="post-question">
+      <p>e o que você achou do filme? tem algo que você discorda de mim ou concorda?</p>
+    </div>
+
+    <a href="../index.html" class="post-back">← voltar</a>
+
+  </div>
+
+</body>
+</html>
