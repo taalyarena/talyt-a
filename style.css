@@ -256,6 +256,8 @@ body {
   justify-content: center;
   font-family: 'Playfair Display', serif;
   font-size: 28px;
+  font-style: bold;
+  font-weight: 700; 
   color: #f13030;
   flex-shrink: 0;
   letter-spacing: -1px;
