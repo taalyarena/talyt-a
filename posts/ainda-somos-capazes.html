@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ainda somos capazes de coisas épicas · talyt.a</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -15,7 +16,6 @@
       min-height: 100vh;
     }
 
-    /* NAV */
     .nav {
       display: flex;
       justify-content: space-between;
@@ -52,7 +52,6 @@
 
     .nav-links a:hover { color: #f45b69; }
 
-    /* HERO DO POST */
     .post-hero {
       max-width: 720px;
       margin: 0 auto;
@@ -83,12 +82,10 @@
       letter-spacing: 0.06em;
     }
 
-  /* IMAGEM DE CAPA */
     .post-cover {
       max-width: 500px;
-      margin: 0 auto 0;
+      margin: 0 auto;
       padding: 0 32px;
- 
     }
 
     .post-cover-inner {
@@ -98,28 +95,60 @@
       padding: 8px;
       border-radius: 10px;
       overflow: hidden;
-      margin-top: 32px;
+      margin: 32px auto 0;
+
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-.image-box {
-  width: fit-content;
-  height: 100%;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-    .post-cover-inner img {
-      width: 100%;
+    .image-box {
+      width: fit-content;
       height: 100%;
-      object-fit: contain;
       border-radius: 10px;
-      display: block;
+      overflow: hidden;
     }
 
-    /* DESTAQUE / QUOTE */
+    .image-box img {
+      height: 100%;
+      width: auto;
+      max-width: 100%;
+      display: block;
+      border-radius: 10px;
+    }
+
+    .post-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 32px 80px;
+    }
+
+    .post-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #f6e8ea;
+      margin: 48px 0 16px;
+      line-height: 1.2;
+    }
+
+    .post-content p {
+      font-size: 17px;
+      line-height: 1.85;
+      color: #f6e8eacc;
+      margin-bottom: 24px;
+    }
+
+    .post-content em {
+      font-style: italic;
+      color: #f6e8ea;
+    }
+
+    .post-content strong {
+      font-weight: 500;
+      color: #f6e8ea;
+    }
+
     .post-quote {
       border-left: 2px solid #f45b69;
       padding: 4px 0 4px 20px;
@@ -131,7 +160,6 @@
       line-height: 1.6;
     }
 
-    /* PLACEHOLDER PARA IMAGEM NO MEIO DO TEXTO */
     .post-img {
       width: 100%;
       aspect-ratio: 16 / 9;
@@ -150,7 +178,6 @@
       display: block;
     }
 
-    /* VEREDITO FINAL */
     .post-verdict {
       background: #2e1f24;
       border: 0.5px solid #f45b6933;
@@ -174,7 +201,6 @@
       margin: 0;
     }
 
-    /* PERGUNTA FINAL */
     .post-question {
       background: #f45b69;
       border-radius: 10px;
@@ -191,7 +217,6 @@
       margin: 0;
     }
 
-    /* VOLTAR */
     .post-back {
       display: inline-block;
       margin-top: 48px;
@@ -204,13 +229,13 @@
       padding-bottom: 2px;
     }
 
-    /* MOBILE */
     @media (max-width: 768px) {
       .nav { padding: 16px 20px; }
       .nav-links { display: none; }
       .post-hero { padding: 36px 20px 32px; }
       .post-title { font-size: 28px; }
       .post-cover { padding: 0 20px; }
+      .post-cover-inner { width: 100%; }
       .post-content { padding: 36px 20px 60px; }
       .post-content p { font-size: 16px; }
       .post-content h2 { font-size: 22px; }
@@ -219,6 +244,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <nav class="nav">
@@ -231,21 +257,20 @@
     </div>
   </nav>
 
-  <!-- HERO -->
   <div class="post-hero">
     <div class="post-cat">cinema</div>
     <h1 class="post-title">ainda somos capazes de coisas épicas</h1>
     <div class="post-meta">3 mai 2026 · 7 min de leitura</div>
   </div>
 
-  <!-- CAPA -->
   <div class="post-cover">
     <div class="post-cover-inner">
-      <img src="../imagens/devils_head.png" alt="O Diabo Veste Prada">
+      <div class="image-box">
+        <img src="../imagens/devils_head_sqr.png" alt="O Diabo Veste Prada">
+      </div>
     </div>
   </div>
 
-  <!-- CONTEÚDO -->
   <div class="post-content">
 
     <h2>o Gap</h2>
@@ -254,9 +279,6 @@
     <p>E bom. E digno de ir ao cinema. (Hello, 2014!)</p>
     <p>Por pelo menos 40 minutos, o filme gira em torno de como o mundo mudou, que hoje a revista é na tela, e você <em>scroll</em> pela revista, não folheia mais. E como até a RUNWAY não escapou disso. Pensei que o roteiro ia seguir nesse sentido de história, e talvez, oferecer uma solução criativa para esse 'problema', mas aparentemente o canal para acessar essa resposta ainda está livre!</p>
     <p>Não achei ruim a ideia do roteiro, mas enganou na primeira hora de filme. Não imaginei que o roteiro ia tentar conservar o espírito da revista. E deixar no ar uma dúvida que ninguém até hoje sabe responder: como a velha guarda pode (porque ela <em>tem que</em>) se ajustar ao novo folhear: o <em>scroll</em>?</p>
-
-    <!-- ESPAÇO PARA IMAGEM -->
-    <!-- <div class="post-img"><img src="../imagens/nome-da-img.jpg" alt=""></div> -->
 
     <h2>a cena mais linda do filme</h2>
 
@@ -285,13 +307,11 @@
 
     <p>Literalmente 20 minutos antes da sessão, do outro lado do cinema, minha mãe viu uma mulher que ela tinha conhecido num jantar de <em>networking.</em> E no dia do filme que me ensina o poder de um network, semanas antes da nossa mudança, eu vejo o que um bom <em>network</em> pode fazer por você. Achei significativo!</p>
 
-    <!-- VEREDITO -->
     <div class="post-verdict">
       <div class="post-verdict-label">veredito final</div>
       <p>Em meio a ondas de IA, <em>short reels</em> e mentes não pensantes, ainda somos capazes de produzir e valorizar o épico! Esse filme curou minha <em>inner child</em> de algo que eu nem sabia que precisava de cura. Minha versão de 14 anos está com o coração quentinho.</p>
     </div>
 
-    <!-- PERGUNTA FINAL -->
     <div class="post-question">
       <p>e o que você achou do filme? tem algo que você discorda de mim ou concorda?</p>
     </div>
