@@ -89,10 +89,10 @@
     }
 
     .post-cover-inner {
-      width: 60%;
+      width: 100%;
       aspect-ratio: 16 / 5;
       background: linear-gradient(135deg, #5a0001 0%, #f13030 50%, #f45b69 100%);
-      padding: 8px 48px;
+      padding: 8px 16px;
       border-radius: 10px;
       overflow: hidden;
       margin: 32px auto 0;
@@ -230,7 +230,9 @@
     }
 
     @media 
-    (max-width: 768px) {
+    (max-width: 768px
+     min-width: 769px;
+    ) {
       .nav { padding: 16px 20px; }
       .nav-links { display: none; }
       .post-hero { padding: 36px 20px 32px; }
