@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>vilã mal compreendida? · talyt.a</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #22181c;
+      color: #f6e8ea;
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 32px;
+      border-bottom: 0.5px solid #f45b6930;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 22px;
+      color: #f6e8ea;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-logo span { color: #f45b69; }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #f6e8ea99;
+    }
+
+    .nav-links a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: #f45b69; }
+
+    .post-hero {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 56px 32px 40px;
+      border-bottom: 0.5px solid #f45b6920;
+    }
+
+    .post-cat {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #f45b69;
+      margin-bottom: 16px;
+    }
+
+    .post-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.12;
+      color: #f6e8ea;
+      margin-bottom: 20px;
+    }
+
+    .post-meta {
+      font-size: 12px;
+      color: #f6e8ea44;
+      letter-spacing: 0.06em;
+    }
+
+    .post-cover {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .post-cover-inner {
+      width: 100%;
+      aspect-ratio: 16 / 5;
+      background: linear-gradient(135deg, #5a0001 0%, #f13030 50%, #f45b69 100%);
+      padding: 8px 16px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 32px auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .image-box {
+      width: fit-content;
+      height: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .image-box img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .post-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 32px 80px;
+    }
+
+    .post-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #f6e8ea;
+      margin: 48px 0 16px;
+      line-height: 1.2;
+    }
+
+    .post-content p {
+      font-size: 17px;
+      line-height: 1.85;
+      color: #f6e8eacc;
+      margin-bottom: 24px;
+    }
+
+    .post-content em {
+      font-style: italic;
+      color: #f6e8ea;
+    }
+
+    .post-content strong {
+      font-weight: 500;
+      color: #f6e8ea;
+    }
+
+    .post-content s {
+      opacity: 0.4;
+    }
+
+    .post-quote {
+      border-left: 2px solid #f45b69;
+      padding: 4px 0 4px 20px;
+      margin: 32px 0;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 20px;
+      color: #f6e8eaaa;
+      line-height: 1.6;
+    }
+
+    .post-img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #f45b69;
+      padding: 8px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 36px 0;
+    }
+
+    .post-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 6px;
+      display: block;
+    }
+
+    .post-verdict {
+      background: #2e1f24;
+      border: 0.5px solid #f45b6933;
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin: 48px 0;
+    }
+
+    .post-verdict-label {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #f45b69;
+      margin-bottom: 12px;
+    }
+
+    .post-verdict p {
+      font-size: 16px;
+      color: #f6e8eacc;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .post-question {
+      background: #f45b69;
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin-top: 48px;
+    }
+
+    .post-question p {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-style: italic;
+      color: #22181c;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .post-back {
+      display: inline-block;
+      margin-top: 48px;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #f45b69;
+      text-decoration: none;
+      border-bottom: 0.5px solid #f45b6955;
+      padding-bottom: 2px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .post-hero { padding: 36px 20px 32px; }
+      .post-title { font-size: 28px; }
+      .post-cover { max-width: 100%; padding: 0 56px; }
+      .post-cover-inner { aspect-ratio: 3 / 2; }
+      .image-box { width: 100%; height: 100%; border-radius: 10px; overflow: hidden; }
+      .image-box img { width: 100%; height: 100%; object-fit: contain; border-radius: 10px; display: block; }
+      .post-content { padding: 36px 20px 60px; }
+      .post-content p { font-size: 16px; }
+      .post-content h2 { font-size: 22px; }
+      .post-verdict { padding: 20px; }
+      .post-question { padding: 20px; }
+    }
+
+    /* DESKTOP */
+    @media (min-width: 769px) {
+      .post-cover { max-width: 720px; padding: 0 32px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <a href="../index.html" class="nav-logo">talyt<span>.</span>a</a>
+    <div class="nav-links">
+      <a href="#">filmes</a>
+      <a href="#">livros</a>
+      <a href="#">pensamentos</a>
+      <a href="#">youtube</a>
+    </div>
+  </nav>
+
+  <div class="post-hero">
+    <div class="post-cat">livros</div>
+    <h1 class="post-title">vilã mal compreendida?</h1>
+    <div class="post-meta">4 mai 2026 · 4 min de leitura</div>
+  </div>
+
+  <div class="post-cover">
+    <div class="post-cover-inner">
+      <div class="image-box">
+        <img src="../imagens/ch.png" alt="Colleen Hoover">
+      </div>
+    </div>
+  </div>
+
+  <div class="post-content">
+
+    <p>Eu não entendi direito o porquê da onda de hate com a Coleen Hoover. O que eu vi foram algumas pessoas falando que ela tava estragando a literatura, porque ela tava escrevendo livros de romance "básicos" e tava todo mundo comprando. Não sei se foi esse o rolê todo, mas se sim — aqui tá meu take nisso :)</p>
+
+    <p>Desde que o mundo é mundo, as pessoas que fazem sucesso incomodam e recebem críticas — isso a gente já sabe. Então é de se esperar que ela receba algum hate aqui ou ali, e acho que ela também espera (seria loucura se não esperasse).</p>
+
+    <p>Essa onda pode ser comparada à fanfic <em>After</em>, que nasceu no Wattpad e encontrou seu caminho até… o streaming. Então se a questão é retratar relacionamento tóxico, temos um belo exemplar: <s>Harry Styles</s>, ah, quero dizer Hardin Scott. Um homem extremamente tóxico, que não deixa a mocinha livre para viver e só atrapalha a vida dela sem qualquer remorso. Que, ao contrário de Hoover, é amado pela maioria. (Eu parei de ler After depois do segundo livro então não tenho muita base para falar!)</p>
+
+    <div class="post-quote">
+      ninguém é obrigado a gostar de tudo que as pessoas produzem.
+    </div>
+
+    <p>Enquanto algumas pessoas só gostam dos clássicos, outras só leem fantasia… e tá tudo bem! Que tragédia seria se todos tivéssemos o mesmo gosto e opiniões! Mas a tragédia real é que algumas pessoas não entendem o conceito de "somos todos diferentes" — e decidem que são as responsáveis por fazer o mundo um lugar melhor, forçando seus próprios gostos <em>down the throat.</em></p>
+
+    <p>Se você é uma das pessoas que precisa que todas as outras dividam da mesma opinião que você, te faço um convite a pensar: <strong>por quê?</strong></p>
+
+    <div class="post-question">
+      <p>e para esclarecer: eu li uns 3 livros dela e não a sigo nas redes. não preciso saber 100% para dar minha opinião — só preciso ser humilde o suficiente para admitir que não sei tudo. 🙂</p>
+    </div>
+
+    <a href="../index.html" class="post-back">← voltar</a>
+
+  </div>
+
+</body>
+</html>
