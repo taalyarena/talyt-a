@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>é assim que acaba · talyt.a</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #22181c;
+      color: #f6e8ea;
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 32px;
+      border-bottom: 0.5px solid #f45b6930;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 22px;
+      color: #f6e8ea;
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-logo span { color: #f45b69; }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #f6e8ea99;
+    }
+
+    .nav-links a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: #f45b69; }
+
+    .post-hero {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 56px 32px 40px;
+      border-bottom: 0.5px solid #f45b6920;
+    }
+
+    .post-cat {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #f45b69;
+      margin-bottom: 16px;
+    }
+
+    .post-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.12;
+      color: #f6e8ea;
+      margin-bottom: 20px;
+    }
+
+    .post-meta {
+      font-size: 12px;
+      color: #f6e8ea44;
+      letter-spacing: 0.06em;
+    }
+
+    .post-cover {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .post-cover-inner {
+      width: 100%;
+      aspect-ratio: 16 / 5;
+      background: linear-gradient(135deg, #5a0001 0%, #f13030 50%, #f45b69 100%);
+      padding: 8px 16px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 32px auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .image-box {
+      width: fit-content;
+      height: 100%;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .image-box img {
+      height: 100%;
+      width: auto;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .post-content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 48px 32px 80px;
+    }
+
+    .post-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: #f6e8ea;
+      margin: 48px 0 16px;
+      line-height: 1.2;
+    }
+
+    .post-content p {
+      font-size: 17px;
+      line-height: 1.85;
+      color: #f6e8eacc;
+      margin-bottom: 24px;
+    }
+
+    .post-content em {
+      font-style: italic;
+      color: #f6e8ea;
+    }
+
+    .post-content strong {
+      font-weight: 500;
+      color: #f6e8ea;
+    }
+
+    .post-content s { opacity: 0.4; }
+
+    .post-quote {
+      border-left: 2px solid #f45b69;
+      padding: 4px 0 4px 20px;
+      margin: 32px 0;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 20px;
+      color: #f6e8eaaa;
+      line-height: 1.6;
+    }
+
+    .post-img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #f45b69;
+      padding: 8px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin: 36px 0;
+    }
+
+    .post-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      border-radius: 6px;
+      display: block;
+    }
+
+    .post-verdict {
+      background: #2e1f24;
+      border: 0.5px solid #f45b6933;
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin: 48px 0;
+    }
+
+    .post-verdict-label {
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #f45b69;
+      margin-bottom: 12px;
+    }
+
+    .post-verdict p {
+      font-size: 16px;
+      color: #f6e8eacc;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .post-question {
+      background: #f45b69;
+      border-radius: 10px;
+      padding: 28px 32px;
+      margin-top: 48px;
+    }
+
+    .post-question p {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-style: italic;
+      color: #22181c;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    .post-back {
+      display: inline-block;
+      margin-top: 48px;
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #f45b69;
+      text-decoration: none;
+      border-bottom: 0.5px solid #f45b6955;
+      padding-bottom: 2px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .post-hero { padding: 36px 20px 32px; }
+      .post-title { font-size: 28px; }
+      .post-cover { max-width: 100%; padding: 0 56px; }
+      .post-cover-inner { aspect-ratio: 3 / 2; }
+      .image-box { width: 100%; height: 100%; overflow: hidden; }
+      .image-box img { width: 100%; height: 100%; object-fit: contain; display: block; }
+      .post-content { padding: 36px 20px 60px; }
+      .post-content p { font-size: 16px; }
+      .post-content h2 { font-size: 22px; }
+      .post-verdict { padding: 20px; }
+      .post-question { padding: 20px; }
+    }
+
+    /* DESKTOP */
+    @media (min-width: 769px) {
+      .post-cover { max-width: 720px; padding: 0 32px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="nav">
+    <a href="../index.html" class="nav-logo">talyt<span>.</span>a</a>
+    <div class="nav-links">
+      <a href="#">filmes</a>
+      <a href="#">livros</a>
+      <a href="#">pensamentos</a>
+      <a href="#">youtube</a>
+    </div>
+  </nav>
+
+  <div class="post-hero">
+    <!-- MUDA: categoria (cinema / livros / pensamentos) -->
+    <div class="post-cat">livros</div>
+    <!-- MUDA: título do post -->
+    <h1 class="post-title">É Assim que Acaba</h1>
+    <!-- MUDA: data e tempo de leitura -->
+    <div class="post-meta">ago 2022 · 4 min de leitura</div>
+  </div>
+
+  <div class="post-cover">
+    <div class="post-cover-inner">
+      <div class="image-box">
+        <!-- MUDA: nome do arquivo da imagem -->
+        <img src="../imagens/acaba.png">
+      </div>
+    </div>
+  </div>
+
+  <div class="post-content">
+
+    <!-- MUDA: conteúdo do post -->
+    <!-- use <h2> para subtítulos -->
+    <!-- use <p> para parágrafos -->
+    <!-- use <em> para itálico -->
+    <!-- use <strong> para negrito -->
+    <!-- use <s> para tachado -->
+
+    <h2>O.M.G.</h2>
+    <p>Quando eu terminei de ler o livro, fiquei em choque. Mesmo sabendo o que ia acontecer (na metade do livro eu entendi o que ia acontecer por: <br>1. um livro famoso assim tem que ter ou uma reviravolta ou tem que ser triste <br>2. no TikTok fala que ele é triste <br>3. eu esqueci de fazer meu ritual no começo, fiz no fim e peguei um baita spoiler. <br><br>
+Mas mesmo assim depois de ter me preparado para ficar em choque… eu fiquei em choque! Porém não tive tempo de me recompor, as responsabilidades me chamaram de volta pra vida real. Então, fica esperta: se for ter contato com pessoas e se você mesma, for uma pessoa que gosta do espaço pessoal, faz um favor para você:
+e lê o final sozinha sem ter que conversar depois</p>
+    <h2> o livro e eu</h2>
+    <p>eu não era acostumada com Colleen Hover, e não sabia muito bem como era a escrita ou a técnica dela. Então achei estranho como o relacionamento dos dois se desenvolveu tão rápido logo no começo. Como todo mundo que leu o livro me apaixonei pelo Ryle nas primeiras palavras. E quando a história se desenrolou eu só gostei ainda mais. É engraçado, ambicioso, de família rica mas quer enriquecer por conta própria, um cavalheiro. E quando a Lily encontrou o Atlas no restaurante, por mais que tenha adorado ele de primeira, não achei justo com o Ryle, mesmo se ela tivesse terminado para ficar com outro. <br>Eles decidiram tentar, e pelo menos isso. E aí, quando as coisas foram acontecendo. E eu percebendo a gravidade da história que eu tava lendo. Mais quando eu me vi no mesmo lugar que a Lily, procurando desculpas para o Ryle. E no momento antes da cena fatídica e mais importante para a história, eu sabia que alguma coisa ia acontecer (porque tava na cara que ia dar *m*erda*). <br>No instante que ele fez a pergunta, eu achava que já sabia do fim. Mas eu não poderia estar *mais errada*. Eu não *imaginava* o fim.</p>
+    <h2><em>the problem</em></h2>
+    <p> O que eu imaginava era: que ele sabia de alguma coisa, e como eu já tinha lido essa cena nos flashbacks, eu sabia o que era. E acredito que ela fez mal na hora que mentiu e inventou alguma besteira, poderia ter ela mesma pedido uma verdade nua e crua, ou falado que só ia conversar com ele sóbrio. Mas não julgo dado que a gente nunca sabe como iremos reagir num momento de pressão. Nem mesmo eu saberia dizer o que EU faria. <br>
+      Mas quero falar sobre como que mesmo sabendo que ele estava errado, que não tinha volta, e esperando que a Lily *não voltasse* com ele, no fundo eu *queria* que eles achassem um jeito de resolver essa questão. <br>
+E isso só escancara problemática ainda mais. Exemplifica como estar numa situação dessa é difícil. No livro, você tá na pele da personagem por um tempo, na realidade você VIVE isso, o tempo todo, sem descanso. O medo, a ansiedade e a dúvida constante.
+   
+      <div class="post-quote">é preciso  muita força de vontade para parar esse ciclo e dizer chega.</div>
+    <p> E agir com a decisão, se manter firme na decisão. Essa, acredito, que é a parte mais difícil. Quando aquele sentimento de falta, a vontade de perdoar, de acreditar que ‘ele não vai fazer de novo’, o momento que você quer <em>acreditar</em> que você levou a brincadeira longe demais, ou que <em>ele só estava com raiva.</em> É esse momento que a pessoa é posta a prova, esse é o momento que ela realmente *decide* fazer diferente, nesse momento ela diz se <em>acabou ou não.</em> <br>
+      Eu comecei, mas não terminei, <em>É Assim que Começa</em> e só aumenta a preocupação e a problemática, é que eu <em>ainda</em> penso no Ryle e a Lily como um casal, que talvez, eles poderiam se resolver. O que me leva pensar que se fosse eu  vivendo o que a Lily viveu, <em>eu teria forças para sair de um relacionamento abusivo?</em>
+      
+  
+    <div class="post-question">
+      <p>Essa é interessante e tem MUITO debate aqui! Como você acha que reagiria na cena fatídica? O que você faria depois que tudo estivesse… resolvido?</p>
+    </div>
+
+    <a href="../index.html" class="post-back">← voltar</a>
+
+  </div>
+
+</body>
+</html>
